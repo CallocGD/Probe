@@ -1,0 +1,5 @@
+aiohttp
+aiohttp_socks
+attrs
+asyncclick
+colorama
