@@ -103,7 +103,7 @@ class Probe:
         """Tests to see if a proxy failed or not..."""
         try:
             success = True
-            async with ClientSession(skip_auto_headers=["User-Agent"],  connector=proxy.to_connector(proxy_type)) as client:
+            async with ClientSession(skip_auto_headers=["User-Agent"],  connector=proxy.to_connector(proxy_type), cookies={"gd": 1}) as client:
                 async with client.post("https://www.boomlings.com/database/getGJDailyLevel.php", data={"secret" :"Wmfd2893gb7"}) as resp:
                     if resp.status != 200:
                         success = False
